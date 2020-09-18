@@ -1,0 +1,204 @@
+body {
+  margin: auto;
+  margin-top: 5px;
+width: 250mm;
+  height: 330mm;
+}
+
+header {
+  width: 75%;
+  background-color: white;
+  border-radius: 8px;
+  padding: 3px 15px;
+  margin: 0px auto;
+}
+
+.img {
+  width: 60px;
+  height: auto;
+}
+
+/* Style inputs, select elements and textareas */
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+/* Style the submit button */
+input[type="button"] {
+  background-color: rgb(120, 120, 120);
+  font-size: 15px;
+  font-family: sans-serif;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: -10px 2px;
+}
+
+/* Style the container */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 72%;
+  height: 123px;
+  border-radius: 8px;
+  background-color: rgb(240, 240, 240);
+  padding: 10px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  position: absolue;
+  float: left;
+  width: 18%;
+  margin-top: 10px;
+  margin-bottom: 1px;
+  margin-left: 50px;
+  margin-right: 0px;
+  display: inline-block;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  position: absolue;
+  float: left;
+  width: 35%;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 5px;
+}
+
+.col-week {
+  float: left;
+  width: 10%;
+  margin-top: 10px;
+  margin-bottom: 1px;
+  margin-left: 10px;
+  margin-right: 5px;
+  display: inline-block;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.col-weeks {
+  position: absolue;
+  float: left;
+  width: 7%;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.col-enddate {
+  position: absolue;
+  float: left;
+  width: 35%;
+  margin-top: -2.5px;
+  margin-bottom: 0px;
+  margin-left: 6px;
+  margin-right: 5px;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  margin: 0px auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+  margin-top: 8px;
+}
+td {
+  border: 2px solid grey;
+
+  text-align: center;
+  position: relative;
+}
+th {
+  background-color: rgb(197, 23, 41);
+  color: white;
+  border: 2px solid grey;
+
+  text-align: center;
+  position: relative;
+}
+#linechart {
+  width: 76%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.inline2 {
+  margin: 0px auto;
+  text-align: center;
+}
+.inline2 div {
+  display: inline-block;
+
+  width: 38%;
+  height: 300px;
+}
+.inline1 {
+  margin: 0px auto;
+  text-align: center;
+}
+.inline1 div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@page {
+  size: A4 portrait;
+  margin-top: 3cm;
+  orphans:0;
+}
+
+@page :first {
+  margin-left: 3cm;
+  margin-left: 3cm;
+}
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    page-break-inside: avoid;
+  }
+  .noBreak {
+    break-inside: avoid;
+  }
+  .noPrint {
+    display: none;
+  }
+}

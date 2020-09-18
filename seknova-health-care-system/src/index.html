@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html id='print' lang="en">
+
+<head>
+  <title>Seknova Health Care System</title>
+  <meta charset="UTF-8">
+  <meta name="glucosereport">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
+  <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@0.5.7/chartjs-plugin-annotation.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class='inline1'>
+
+      <div><img class='img' src='https://ntpc-awsjic.com.tw/wp-content/uploads/2019/11/3.4_%E6%99%BA%E6%BA%96_Logo-01.png'></div>
+      <div>
+        <h3>Seknova Health Care System</h3>
+      </div>
+    </div>
+  </header>
+
+  <!--userid and seleted time-->
+  <div class="container">
+    <form name='form' id='form'>
+      <div class="row">
+        <div class="col-25">
+          <label for="UserID">User ID：</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="UserID" name="UserID" placeholder="ex. Sandbox_Sample01">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="StartDateTime">Start Date：</label>
+        </div>
+        <div class="col-75">
+          <input type="date" id="StartDateTime" name="StartDateTime">
+        </div>
+        <div class="col-week">
+          <label for="Week">Weeks：</label>
+        </div>
+        <div class="col-weeks">
+          <select id='Week' name='Week'>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="EndDateTime">End Date：</label>
+        </div>
+        <div class="col-enddate">
+          <p id="EndDateTime" class='font'></p>
+        </div>
+      </div>
+      <div class="row" style='text-align:right;'>
+        <input type="button" value="Submit" onclick='SendFormData();'>
+         <input type="button" value="Print" onclick="window.print();">
+      </div>
+    </form>
+  </div>
+
+  <div>
+    <!--calculations-->
+    <table>
+      <tr>
+        <th>SD</th>
+        <th>eA1C</th>
+        <th>CV</th>
+        <th>Data Sufficiency</th>
+        <th>AUC</th>
+        <th>Time Of Hypo</th>
+        <th>Time Of Hyper</th>
+      </tr>
+      <tr>
+        <td id='sd'></td>
+        <td id='ea1c'></td>
+        <td id='cv'></td>
+        <td id='datasufficiency'></td>
+        <td id='auc'></td>
+        <td id='timesofhypo'></td>
+        <td id='timesofhyper'></td>
+      </tr>
+    </table>
+
+    <!--events count and event details-->
+    <table class="for-table" border="1">
+      <tbody>
+        <tr>
+          <th>Events Count</th>
+          <th colspan="3" id='eventscount'></th>
+        </tr>
+        <tr>
+          <th>Events</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Note</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <!--Record informations-->
+    <table>
+      <tr>
+        <th>Records Interval Time</th>
+        <th>Records Max Count</th>
+        <th>Mean</th>
+        <th>System Time</th>
+      </tr>
+      <tr>
+        <td id='recordsintervaltime'></td>
+        <td id='recordsmaxcount'></td>
+        <td id='mean'></td>
+        <td id='time'></td>
+      </tr>
+    </table>
+  </div>
+  <!--chart.js-->
+  <!--linechart-->
+  <div id="linechart">
+    <canvas id="14days"></canvas>
+  </div>
+  <!--barchart-->
+  <div class="inline2">
+    <div>
+      <canvas id="sleepwake"></canvas>
+    </div>
+    <!--piechart-->
+    <div>
+      <canvas id="percentage"></canvas>
+    </div>
+  </div>
+</body>
+
+</html>
