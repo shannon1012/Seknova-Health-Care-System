@@ -18,7 +18,7 @@ header {
   height: auto;
 }
 
-/* Style inputs, select elements and textareas */
+/* input styles */
 input[type="text"],
 select,
 textarea {
@@ -43,7 +43,7 @@ textarea {
   font-family: sans-serif;
 }
 
-/* Style the submit button */
+/* button styles */
 input[type="button"] {
   background-color: rgb(120, 120, 120);
   font-size: 15px;
@@ -56,7 +56,6 @@ input[type="button"] {
   margin: -10px 2px;
 }
 
-/* Style the container */
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -67,7 +66,7 @@ input[type="button"] {
   padding: 10px;
 }
 
-/* Floating column for labels: 25% width */
+/* Floating column for labels */
 .col-25 {
   position: absolue;
   float: left;
@@ -81,7 +80,7 @@ input[type="button"] {
   font-family: sans-serif;
 }
 
-/* Floating column for inputs: 75% width */
+/* Floating column for inputs */
 .col-75 {
   position: absolue;
   float: left;
@@ -91,7 +90,7 @@ input[type="button"] {
   margin-left: 0px;
   margin-right: 5px;
 }
-
+/* Floating column for start date */
 .col-week {
   float: left;
   width: 10%;
@@ -103,7 +102,7 @@ input[type="button"] {
   font-size: 15px;
   font-family: sans-serif;
 }
-
+/* Floating column for weeks duration */
 .col-weeks {
   position: absolue;
   float: left;
@@ -113,6 +112,7 @@ input[type="button"] {
   margin-left: 5px;
   margin-right: 5px;
 }
+/* Floating column for end date */
 .col-enddate {
   position: absolue;
   float: left;
@@ -134,6 +134,7 @@ input[type="button"] {
   margin: 0px auto;
 }
 
+/* tables */
 table {
   border-collapse: collapse;
   width: 75%;
@@ -156,6 +157,7 @@ th {
   text-align: center;
   position: relative;
 }
+/* charts */
 #linechart {
   width: 76%;
   margin-left: auto;
@@ -179,7 +181,7 @@ th {
   display: inline-block;
   vertical-align: top;
 }
-
+/* print controls */
 @page {
   size: A4 portrait;
   margin-top: 3cm;
@@ -187,8 +189,8 @@ th {
 }
 
 @page :first {
-  margin-left: 3cm;
-  margin-left: 3cm;
+  margin-left: 2cm;
+  margin-right: 2cm;
 }
 @media print {
   * {

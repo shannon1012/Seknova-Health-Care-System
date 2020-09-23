@@ -1,3 +1,4 @@
+//show default start date
 var year = new Date().getFullYear().toString();
 var month = (new Date().getMonth() + 1).toString();
 var date = (new Date().getDate() - 7).toString();
@@ -13,6 +14,7 @@ date = timeAdd0(date);
 var dateControl = document.querySelector('input[type="date"]');
 dateControl.value = year + "-" + month + "-" + date;
 
+//convert start time format into post request format
 function SendFormData() {
   var formElement = document.getElementById("form");
   var StartDateTime = [],
@@ -32,6 +34,7 @@ function SendFormData() {
   StartDateTime = StartDateTime.replace(/,/g, "");
   StartDateTime = StartDateTime.concat("T00:00:00");
 
+  //show end date after submit start date and duration
   var enddatetime = String(formElement[1].value);
   EndDateTime = new Date(
     parseInt(enddatetime.substring(0, 4)),
@@ -57,8 +60,8 @@ function SendFormData() {
   date = timeAdd0(date);
   document.getElementById("EndDateTime").innerHTML =
     year + "/" + month + "/" + date;
+  
   //system time
-
   var NowDate = new Date();
   var year = NowDate.getFullYear();
   var month = NowDate.getMonth() + 1;
@@ -78,14 +81,16 @@ function SendFormData() {
     year + "年" + month + "月" + date + "日";
   setTimeout("ShowTime()", 1000);
   
-
+//alert if time interval is less one week
   if (NowDateCompare.valueOf() < EndDateTime.valueOf()) {
     alert("Time interval must be at least one week!");
   }
-
+  
+//convert start time format into post request format
   var Enddatetime = date + "/" + month + "/" + year;
   Enddatetime = Enddatetime.concat("T00:00:00");
-  //set variables and user information
+  
+//set variables and user information
   var SystemTime = [];
   var EventsStartTime = [],
     EventsEndTime = [];
@@ -290,6 +295,7 @@ function SendFormData() {
       ]
     },
     options: {
+      //assume that events will not occur over 15 times
       annotation: {
         annotations: [
           {
